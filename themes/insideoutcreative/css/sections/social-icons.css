@@ -1,24 +1,35 @@
 .si svg {
-    height:15px;
+    height: 40px;
     width: auto;
+    fill: var(--accent-primary);
+    transition: all .25s ease-in-out;
 }
+
 .svg-icon {
-    border: 1px solid black;
-    height:40px;
-    width:40px;
+    /* border: 1px solid black; */
+    height: 40px;
+    width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     margin-right: 10px;
 }
-.svg-icon,.svg-icon path {
-    transition:all .25s ease-in-out;
+
+.si .svg-icon:hover svg {
+    fill: var(--accent-tertiary);
 }
-a:hover .svg-icon {
-    background:var(--accent-primary);
-    border-color:var(--accent-primary);
+
+/* .svg-icon,
+.svg-icon path {
+    transition: all .25s ease-in-out;
+} */
+
+/* a:hover .svg-icon {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
 }
+
 a:hover .svg-icon path {
     fill: white;
-}
+} */

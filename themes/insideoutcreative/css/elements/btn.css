@@ -12,8 +12,9 @@
 }
 
 .btn-main {
-    background: var(--accent-primary);
+    background: black;
     padding: 10px 25px;
+    border-radius: 25px;
     transition: all .25s ease-in-out;
     display: inline-block;
     text-decoration: none;
@@ -21,6 +22,21 @@
 }
 
 .btn-main:hover {
-    background: var(--accent-secondary);
+    background: var(--accent-primary);
     text-decoration: none;
+}
+
+a.btn-outline {
+    color: white;
+    border: 1px solid white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: "proxima_novabold";
+    transition: all .25s ease-in-out;
+}
+
+a.btn-outline:hover {
+    color: #302f2b;
+    background: white;
 }

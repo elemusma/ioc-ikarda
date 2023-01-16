@@ -16,18 +16,22 @@ button.owl-prev {
   .arrows-middle button.owl-next,
   .arrows-middle button.owl-prev {
     position: absolute;
-    top: 50%;
+    top: 0%;
+    transform: translate(0, -95px);
   }
 
   .arrows-middle button.owl-prev {
-    left: 5%;
-    transform: translate(0, -50%);
+    left: 30%;
   }
 
   .arrows-middle button.owl-next {
-    right: 5%;
-    transform: translate(0, -50%);
+    right: 30%;
   }
+}
+
+.owl-next img,
+.owl-prev img {
+  width: 25px;
 }
 
 @media only screen and (max-width:991px) {

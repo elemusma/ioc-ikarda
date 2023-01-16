@@ -1,7 +1,7 @@
 <?php 
 
 if(have_rows('social_icons','options')): 
-    echo '<div class="si d-flex flex-wrap justify-content-end">';
+    echo '<div class="si d-flex flex-wrap justify-content-center">';
     while(have_rows('social_icons','options')): the_row(); 
 $svgOrImg = get_sub_field('svg_or_image');
 $socialLink = get_sub_field('link');

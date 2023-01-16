@@ -1,0 +1,153 @@
+/* start of repeated content */
+/* .content-area img {
+    max-height: 650px;
+} */
+
+.bg-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: -20%;
+    width: 120%;
+    background: #252525;
+    mix-blend-mode: multiply;
+    z-index: 1;
+    opacity: .68;
+}
+
+.left .bg-top {
+    left: 0;
+}
+
+.top .text {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.right .smaller-text {
+    border-left: 15px solid #231f20;
+}
+
+.left .smaller-text {
+    border-right: 15px solid #231f20;
+}
+
+.smaller-text .bg-top {
+    background: #cccccc;
+    width: 100%;
+    left: 0;
+}
+
+.featured-text {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 200;
+    padding: 9px 0;
+}
+
+@media screen and (max-width: 767px) {
+    .bg-top {
+        width: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+/* end of repeated content */
+
+/* start of bars */
+.col-full-background,
+.img-full-background {
+    opacity: 1;
+}
+
+.col-full-background-overlay {
+    transition: all 0s ease-in-out;
+}
+
+.active-inner-col .img-full-background,
+.active-inner-col .col-full-background-overlay {
+    opacity: 0 !important;
+}
+
+
+.active-inner-col .col-full-background.active .img-full-background {
+    opacity: 1 !important;
+    transform: scale(1.1);
+    transition: all 10s ease-out;
+    transition-delay: 25ms;
+    transition-property: transform;
+}
+
+.active-inner-col .col-full-background.active .col-full-background-overlay {
+    opacity: .25 !important;
+    transition: all 1s ease-in;
+}
+
+.active-inner-col .col-full-background.active .col-full-background-overlay {
+    transition: all 0s ease-in-out;
+}
+
+.active-inner-col .col-full-background.active {
+    z-index: 1 !important;
+    overflow: visible;
+}
+
+.col-full-background:last-child .col-full-background-borders {
+    border-right: 1px solid white;
+}
+
+.col-full-background:first-child .img-full-background {
+    left: 0;
+}
+
+/* start of bars mobile */
+@media only screen and (max-width:992px) {
+    .img-full-background {
+        left: 0 !important;
+        width: 100%;
+        /* object-position: right; */
+    }
+
+    .col-full-background {
+        height: 30vh;
+        min-height: 20vh !important;
+        padding-top: 0 !important;
+    }
+
+    .section-bars .row .col-md-6:last-child {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* end of bars mobile */
+
+/* end of bars */
+
+/* start of instagram feed */
+.col-instagram .col-instagram-overlay,
+.col-instagram .col-instagram-text,
+.col-instagram img {
+    transition: all .25s ease-in-out;
+}
+
+.col-instagram:hover .col-instagram-overlay {
+    opacity: .5 !important;
+}
+
+.col-instagram:hover .col-instagram-text {
+    opacity: 1 !important;
+}
+
+.col-instagram:hover img {
+    transform: scale(1.05);
+}
+
+/* end of instagram feed */

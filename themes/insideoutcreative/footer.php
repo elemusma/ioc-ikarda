@@ -1,9 +1,12 @@
 <?php
-echo '<footer>';
+echo '<footer class="position-relative pb-5">';
+
+echo wp_get_attachment_image(165,'full','',['class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;object-fit:cover;']);
+
 echo '<section class="pt-5">';
 echo '<div class="container">';
 echo '<div class="row justify-content-center">';
-echo '<div class="col-md-5 text-center pb-5">';
+echo '<div class="col-lg-3 col-md-5 text-center pb-5">';
 echo '<a href="' . home_url() . '">';
 
 $logo = get_field('logo','options'); 
@@ -27,7 +30,7 @@ echo '<div class="row justify-content-center">';
 echo '<div class="col-12">';
 
 wp_nav_menu(array(
-'menu' => 'footer',
+'menu' => 'primary',
 'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center text-white text-uppercase'
 ));
 
@@ -40,19 +43,28 @@ echo '<div class="text-gray-1 pt-4">';
 
 the_field('website_message','options');
 
+wp_nav_menu(array(
+    'menu' => 'footer',
+    'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center text-white text-uppercase'
+));
+
+echo '<a href="https://insideoutcreative.io/" target="_blank" rel="noopener noreferrer" style="" class="">';
+echo '<img src="https://insideoutcreative.io/wp-content/uploads/2022/04/created-by-inside-out-creative.png" style="width:150px;" class="h-auto ml-2" alt="">';
+// echo '<img src="https://insideoutcreative.io/wp-content/uploads/2022/06/created-by-inside-out-creative-black.png" style="width:150px;" class="h-auto ml-2" alt="">';
+echo '</a>';
+
 echo '</div>';
 echo '</div>';
 echo '</div>';
 echo '</div>';
 echo '</section>';
-echo '<div class="bg-gray text-center pt-3 pb-3 pl-5 pr-5">';
-    echo '<div class="d-flex justify-content-center align-items-center">';
-        echo '<a href="https://insideoutcreative.io/" target="_blank" rel="noopener noreferrer" style="" class="">';
-        echo '<img src="https://insideoutcreative.io/wp-content/uploads/2022/04/created-by-inside-out-creative.png" style="width:150px;" class="h-auto ml-2" alt="">';
-        // echo '<img src="https://insideoutcreative.io/wp-content/uploads/2022/06/created-by-inside-out-creative-black.png" style="width:150px;" class="h-auto ml-2" alt="">';
-        echo '</a>';
-    echo '</div>';
-echo '</div>';
+
+// echo '<div class="bg-gray text-center pt-3 pb-3 pl-5 pr-5">';
+//     echo '<div class="d-flex justify-content-center align-items-center">';
+        
+//     echo '</div>';
+// echo '</div>';
+
 echo '</footer>';
 
 if(get_field('footer', 'options')) { the_field('footer', 'options'); }
