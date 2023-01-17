@@ -20,31 +20,60 @@ wp_head();
 <body <?php body_class(); ?>>
 <?php
 if(get_field('body','options')) { the_field('body','options'); }
-echo '<div class="blank-space"></div>';
-echo '<header class="position-relative pt-3 pb-3 z-3 box-shadow bg-white w-100" style="top:0;left:0;">';
+// echo '<div class="blank-space"></div>';
+echo '<header class="position-fixed z-3 w-100" style="top:0;left:0;">';
+
+echo '<div class="position-relative text-white">';
+
+echo wp_get_attachment_image(200,'full','',['class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;']);
+
+wp_nav_menu(array(
+    'menu' => 'primary',
+    'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-0'
+    )); 
+
+    // echo '<div class="desktop-hidden">';
+    // echo '<a id="navToggle" class="nav-toggle">';
+    // echo '<div>';
+    // echo '<div class="line-1 bg-accent"></div>';
+    // echo '<div class="line-2 bg-accent"></div>';
+    // echo '<div class="line-3 bg-accent"></div>';
+    // echo '</div>';
+    // echo '</a>';
+    // echo '</div>';
+
+echo '</div>';
 
 echo '<div class="nav">';
-echo '<div class="container">';
-echo '<div class="row align-items-center">';
-echo '<div class="col-lg-3 col-md-6">';
+echo '<div class="container-fluid">';
+echo '<div class="row justify-content-between">';
+echo '<div class="col-lg-3 col-md-4 col-5 text-center">';
 echo '<a href="' . home_url() . '">';
 
 $logo = get_field('logo','options'); 
 if($logo){
-echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto']); 
+echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:200px;padding-top:25px;']); 
 }
 
 echo '</a>';
 echo '</div>';
-echo '<div class="col-lg-4 col-6 desktop-hidden">';
-echo '<a id="navToggle" class="nav-toggle">';
-echo '<div>';
-echo '<div class="line-1 bg-accent"></div>';
-echo '<div class="line-2 bg-accent"></div>';
-echo '<div class="line-3 bg-accent"></div>';
+
+echo '<div class="col-lg-3 col-md-4 col-5 p-0">';
+// echo '<a href="' . home_url() . '">';
+
+$logoSecondary = get_field('logo_secondary','options'); 
+if($logoSecondary){
+echo wp_get_attachment_image($logoSecondary['id'],'full',"",['class'=>'w-100 h-auto']); 
+}
+
+// echo '</a>';
 echo '</div>';
-echo '</a>';
-echo '</div>';
+
+
+// echo '<div class="col-lg-4 col-6 desktop-hidden">';
+
+// echo '</div>';
+
 echo '<div id="navMenuOverlay" class="position-fixed z-2"></div>';
 echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-white desktop-hidden" id="navItems">';
 
@@ -88,19 +117,34 @@ echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-
 
 
 if(is_front_page()) {
-echo '<div class="pt-5 pb-5 text-white text-center">';
-echo '<div class="position-relative">';
-echo '<div class="multiply overlay position-absolute w-100 h-100 bg-img"></div>';
-echo '<div class="position-relative">';
+echo '<div class="text-white" style="padding:500px 0px 50px;">';
+// echo '<div class="position-relative">';
+// echo '<div class="multiply overlay position-absolute w-100 h-100 bg-img"></div>';
+// echo '<div class="position-relative">';
 echo '<div class="container">';
-echo '<div class="row">';
-echo '<div class="col-12">';
-echo '<h1 class="pt-3 pb-3 mb-0">' . get_the_title() . '</h1>';
+echo '<div class="row justify-content-end">';
+
+echo '<div class="col-md-4">';
+echo '<h1 class="pt-3 mb-0" style="font-size:5rem;">' . get_the_title() . '</h1>';
+echo '<div class="divider ml-0" style="border-width:5px;"></div>';
+if ( have_posts() ) : while ( have_posts() ) : the_post();
+the_content();
+endwhile;
+endif;
+
+echo '</div>';
+
+if(get_field('header_text')){
+    echo '<div class="col-12 text-center pt-4">';
+    echo get_field('header_text');
+    echo '</div>';
+}
+
+
 echo '</div>';
 echo '</div>';
-echo '</div>';
-echo '</div>';
-echo '</div>';
+// echo '</div>';
+// echo '</div>';
 echo '</div>';
 }
 

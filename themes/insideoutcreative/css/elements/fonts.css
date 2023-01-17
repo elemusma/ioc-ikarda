@@ -80,3 +80,33 @@ strong {
 blockquote {
   font-size: 90%;
 }
+
+h1 {
+  font-family: teko, sans-serif;
+  font-weight: 700;
+}
+
+/* Teko Light
+font-family: teko, sans-serif;
+font-weight: 300;
+font-style: normal;
+
+Teko Regular
+font-family: teko, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Teko Medium
+font-family: teko, sans-serif;
+font-weight: 500;
+font-style: normal;
+
+Teko SemiBold
+font-family: teko, sans-serif;
+font-weight: 600;
+font-style: normal;
+
+Teko Bold
+font-family: teko, sans-serif;
+font-weight: 700;
+font-style: normal; */

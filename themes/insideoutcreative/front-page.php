@@ -14,7 +14,7 @@ echo wp_get_attachment_image(197,'full','',['class'=>'w-100 h-100 position-absol
 
 // query the user media
 $fields = "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username";
-$token = "IGQVJVSFpDWF9PNXctS25NbVktRVNVeldKNTRna3E2ZA3g1N1lDaHNfb090eDhXVWl6VDcybjU0d0tHMlFFdkxrZAXlOVVkxYllOUHVUYnRlN3pxbktGTHhFeHhBaU8tNFZApMUdFYWRRdnZAmYmZAzQjZAhMgZDZD";
+$token = "IGQVJVWC1VNEI4cDc4STJkUXJjemtrWmFhSWM4alZAaNVNnSU0yRzJoSWVkS3EwVFNoT09EYUg3eGcwRzZAVbl96R2dJQ3hZAcUFYVkNoaE9YR2pFNHFDNDZA1ZAVNJZA0NGcF9MOTl3M0p1NFIwVEdmYXVKNwZDZD";
 $limit = 9;
 
 $json_feed_url="https://graph.instagram.com/me/media?fields={$fields}&access_token={$token}&limit={$limit}";
@@ -23,7 +23,7 @@ $contents = json_decode($json_feed, true, 512, JSON_BIGINT_AS_STRING);
 
 echo '<div class="container-fluid" style="border-top:4px solid black;border-bottom:4px solid black">';
 echo '<div class="instagram-carousel owl-carousel owl-theme">';
-foreach($contents["data"] as $post){
+foreach($contents['data'] as $post){
 
 $username = isset($post["username"]) ? $post["username"] : "";
 // $likes = isset($post["likes"]) ? $post["likes"] : "";
