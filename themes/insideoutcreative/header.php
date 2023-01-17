@@ -29,7 +29,7 @@ echo wp_get_attachment_image(200,'full','',['class'=>'w-100 h-100 position-absol
 
 wp_nav_menu(array(
     'menu' => 'primary',
-    'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-0'
+    'menu_class'=>'menu nav-menu d-flex flex-wrap list-unstyled justify-content-center mb-0'
     )); 
 
     // echo '<div class="desktop-hidden">';
@@ -74,29 +74,29 @@ echo '</div>';
 
 // echo '</div>';
 
-echo '<div id="navMenuOverlay" class="position-fixed z-2"></div>';
-echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-white desktop-hidden" id="navItems">';
+// echo '<div id="navMenuOverlay" class="position-fixed z-2"></div>';
+// echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-white desktop-hidden" id="navItems">';
 
-echo '<div class="pt-5 pb-5">';
-echo '<div class="close-menu">';
-echo '<div>';
-echo '<span id="navMenuClose" class="close h1">X</span>';
-echo '</div>';
-echo '</div>';
-echo '<a href="' . home_url() . '">';
+// echo '<div class="pt-5 pb-5">';
+// echo '<div class="close-menu">';
+// echo '<div>';
+// echo '<span id="navMenuClose" class="close h1">X</span>';
+// echo '</div>';
+// echo '</div>';
+// echo '<a href="' . home_url() . '">';
 
-$logo = get_field('logo','options'); 
-if($logo){
-echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:250px;']);
-}
+// $logo = get_field('logo','options'); 
+// if($logo){
+// echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:250px;']);
+// }
 
-echo '</a>';
-echo '</div>';
-wp_nav_menu(array(
-'menu' => 'primary',
-'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-0'
-)); 
-echo '</div>';
+// echo '</a>';
+// echo '</div>';
+// wp_nav_menu(array(
+// 'menu' => 'primary',
+// 'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-0'
+// )); 
+// echo '</div>';
 echo '</div>';
 echo '</div>';
 echo '</div>';
@@ -117,14 +117,14 @@ echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-
 
 
 if(is_front_page()) {
-echo '<div class="text-white" style="padding:500px 0px 50px;">';
+echo '<div class="text-white hero-content-padding" style="padding:500px 0px 50px;">';
 // echo '<div class="position-relative">';
 // echo '<div class="multiply overlay position-absolute w-100 h-100 bg-img"></div>';
 // echo '<div class="position-relative">';
 echo '<div class="container">';
 echo '<div class="row justify-content-end">';
 
-echo '<div class="col-md-4">';
+echo '<div class="col-lg-4 col-md-6">';
 echo '<h1 class="pt-3 mb-0" style="font-size:5rem;">' . get_the_title() . '</h1>';
 echo '<div class="divider ml-0" style="border-width:5px;"></div>';
 if ( have_posts() ) : while ( have_posts() ) : the_post();

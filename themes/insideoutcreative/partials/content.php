@@ -215,13 +215,13 @@ if(have_rows('testimonials_group')): while(have_rows('testimonials_group')): the
 
         echo '<div class="position-relative z-1">';
         echo '<div class="">';
-        echo '<h3 class="text-accent-tertiary bold text-uppercase h6" style="letter-spacing:0.2em;">' . get_sub_field('pretitle') . '</h3>';
+        echo '<h3 class="text-accent-tertiary bold text-uppercase h5" style="letter-spacing:0.2em;">' . get_sub_field('pretitle') . '</h3>';
         echo '</div>';
         echo '<div class="text-center">';
         echo '<h2 class="text-white" style="font-size:60px;">' . get_sub_field('title') . '</h2>';
         echo '</div>';
         echo '<div class="text-right">';
-        echo '<h5 class="text-accent-tertiary text-uppercase ls-big nova-bold">' . get_sub_field('subtitle') . '</h5>';
+        echo '<h5 class="text-accent-tertiary text-uppercase bold" style="letter-spacing:0.2em;">' . get_sub_field('subtitle') . '</h5>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
@@ -244,6 +244,7 @@ if(have_rows('testimonials_group')): while(have_rows('testimonials_group')): the
 
         $sideImg = get_sub_field('small_image');
 
+        echo '<div class="container">';
         if($imageSide == 'Left'){
         echo '<div class="row align-items-center pt-4">';
         } elseif($imageSide == 'Right') {
@@ -275,7 +276,9 @@ if(have_rows('testimonials_group')): while(have_rows('testimonials_group')): the
         echo '</div>';
 
         echo '</div>';
-        echo '</div>';
+        echo '</div>'; // end of row
+        echo '</div>'; // end of container
+
         echo '</div>';
         endwhile;
 
