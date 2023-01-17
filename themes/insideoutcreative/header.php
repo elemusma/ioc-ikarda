@@ -47,23 +47,23 @@ echo '</div>';
 echo '<div class="nav">';
 echo '<div class="container-fluid">';
 echo '<div class="row justify-content-between">';
-echo '<div class="col-lg-3 col-md-4 col-5 text-center">';
+echo '<div class="col-lg-3 col-md-4 col-4 text-center">';
 echo '<a href="' . home_url() . '">';
 
 $logo = get_field('logo','options'); 
 if($logo){
-echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:200px;padding-top:25px;']); 
+echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'h-auto pt-md-4 pt-2','style'=>'max-width:100%;transition:all .5s ease-in-out;','id'=>'logo-main']); 
 }
 
 echo '</a>';
 echo '</div>';
 
-echo '<div class="col-lg-3 col-md-4 col-5 p-0">';
+echo '<div class="col-lg-3 col-md-4 col-5 p-0 text-right">';
 // echo '<a href="' . home_url() . '">';
 
 $logoSecondary = get_field('logo_secondary','options'); 
 if($logoSecondary){
-echo wp_get_attachment_image($logoSecondary['id'],'full',"",['class'=>'w-100 h-auto']); 
+echo wp_get_attachment_image($logoSecondary['id'],'full',"",['class'=>'h-auto','style'=>'transition:all .5s ease-in-out;max-width:100%;','id'=>'logo-secondary']); 
 }
 
 // echo '</a>';

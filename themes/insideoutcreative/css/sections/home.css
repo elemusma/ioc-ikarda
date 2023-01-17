@@ -1,3 +1,14 @@
+/* start of premium products */
+.col-premium-product:hover .col-premium-product-overlay {
+    opacity: 1 !important;
+}
+
+.col-premium-product-overlay {
+    transition: all .25s ease-in-out;
+}
+
+/* end of premium products */
+
 /* start of repeated content */
 /* .content-area img {
     max-height: 650px;

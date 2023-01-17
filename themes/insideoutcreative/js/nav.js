@@ -6,12 +6,26 @@ let navMenuClose = document.querySelector('#navMenuClose');
 let header = document.querySelector('header');
 let blankSpace = document.querySelector('.blank-space');
 
-// window.addEventListener("scroll", parallaxEffect);
+let logoMain = document.querySelector('#logo-main')
+let logoSecondary = document.querySelector('#logo-secondary')
+
+window.addEventListener("scroll", parallaxEffect);
 
 function parallaxEffect() {
-    blankSpace.style.height = header.offsetHeight + "px";
-    header.classList.add('position-fixed');
-    header.classList.remove('position-relative');
+    // blankSpace.style.height = header.offsetHeight + "px";
+    // header.classList.add('position-fixed');
+    // header.classList.remove('position-relative');
+
+    if (scrollY < 299) {
+        logoMain.style.width = "200px"
+        logoSecondary.style.width = "420px"
+        // logoMain.setAttribute('style', 'width:200px!important;')
+    } else if (scrollY > 300) {
+        // logoMain.setAttribute('style', 'width:100px!important;')
+        logoMain.style.width = "100px"
+        logoSecondary.style.width = "210px"
+    }
+    console.log(scrollY);
 }
 
 // closes menu on menu item clicked, for anchor links

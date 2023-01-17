@@ -1,0 +1,12 @@
+2023-01-17T18:48:57+00:00 CRITICAL Uncaught Error: Call to undefined function get_su_field() in /Applications/MAMP/htdocs/ikarda/wp-content/themes/insideoutcreative/partials/content.php:42
+Stack trace:
+#0 /Applications/MAMP/htdocs/ikarda/wp-includes/template.php(785): require()
+#1 /Applications/MAMP/htdocs/ikarda/wp-includes/template.php(718): load_template('/Applications/M...', false, Array)
+#2 /Applications/MAMP/htdocs/ikarda/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Applications/MAMP/htdocs/ikarda/wp-content/themes/insideoutcreative/front-page.php(3): get_template_part('partials/conten...')
+#4 /Applications/MAMP/htdocs/ikarda/wp-includes/template-loader.php(106): include('/Applications/M...')
+#5 /Applications/MAMP/htdocs/ikarda/wp-blog-header.php(19): require_once('/Applications/M...')
+#6 /Applications/MAMP/htdocs/ikarda/index.php(17): require('/Applications/M...')
+#7 {main}
+  thrown in /Applications/MAMP/htdocs/ikarda/wp-content/themes/insideoutcreative/partials/content.php on line 42
+
