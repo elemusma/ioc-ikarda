@@ -57,45 +57,94 @@ if($layout == 'Content'){
     echo '</div>';
     echo '</div>';
 
-    
-    $premiumProducts = get_sub_field('products');
-    
-    if( $premiumProducts ):
+    if(have_rows('products_repeater')):
         echo '<div class="container-fluid">';
         echo '<div class="row pt-5">';
-foreach( $premiumProducts as $post ): 
-// Setup this post for WP functions (variable must be named $post).
-setup_postdata($post);
-echo '<a href="' . get_the_permalink() . '" class="col-lg-3 col-md-6 text-center col-premium-product" style="color:#66533b;">';
-echo '<div class="position-relative">';
+        while(have_rows('products_repeater')): the_row();
+        $image = get_sub_field('image');
+        $link = get_sub_field('link');
 
-echo '<div class="position-absolute" style="width:75%;height:80%;top:8%;left:12.5%;background:#bfbfbf;mix-blend-mode:multiply;opacity:.42;pointer-events:none;"></div>';
+        if($link){
+            $link_url = $link['url'];
+            $link_title = $link['title'];
+            $link_target = $link['target'] ? $link['target'] : '_self';
+        }
 
-echo '<div class="position-absolute" style="width:77%;height:81.25%;top:7.25%;left:11.5%;border:1px solid #737373;pointer-events:none;"></div>';
+        echo '<a href="' . $link_url . '" target="' . $link_target . '" class="col-lg-3 col-md-6 text-center col-premium-product" style="color:#66533b;">';
+        echo '<div class="position-relative">';
+        
+        echo '<div class="position-absolute" style="width:75%;height:80%;top:8%;left:12.5%;background:#bfbfbf;mix-blend-mode:multiply;opacity:.42;pointer-events:none;"></div>';
+        
+        echo '<div class="position-absolute" style="width:77%;height:81.25%;top:7.25%;left:11.5%;border:1px solid #737373;pointer-events:none;"></div>';
 
-the_post_thumbnail('full',array('class'=>'w-auto','style'=>'height:650px;object-fit:contain;object-position:bottom;'));
-echo '<span href="' . get_the_permalink() . '" class="bold h4 mt-4 d-block" style="">' . get_the_title() . '</span>';
-// echo '<hr class="mt-2">';
+        echo wp_get_attachment_image($image['id'],'full','',[
+            'class'=>'w-auto',
+            'style'=>'height:650px;object-fit:contain;object-position:bottom;'
+        ]);
+        
+        // the_post_thumbnail('full',array('class'=>'w-auto','style'=>'height:650px;object-fit:contain;object-position:bottom;'));
+        echo '<span href="' . $link_url . '" class="bold h4 mt-4 d-block" style="">' . $image['title'] . '</span>';
+        // echo '<hr class="mt-2">';
+        
+        echo '<div class="position-absolute d-flex align-items-center justify-content-center col-premium-product-overlay" style="
+        width: 85%;
+        height: 86%;
+        top: 5%;
+        left: 7.5%;
+        opacity:0;
+        background: rgba(0,0,0,.5);
+        transition:all .25s ease-in-out;
+        ">';
+        echo '<span class="bold text-white h2">SHOP NOW</span>';
+        echo '</div>';
+        
+        echo '</div>';
+        echo '</a>';
 
-echo '<div class="position-absolute d-flex align-items-center justify-content-center col-premium-product-overlay" style="
-width: 85%;
-height: 86%;
-top: 5%;
-left: 7.5%;
-opacity:0;
-background: rgba(0,0,0,.5);
-transition:all .25s ease-in-out;
-">';
-echo '<span class="bold text-white h2">SHOP NOW</span>';
-echo '</div>';
-
-echo '</div>';
-echo '</a>';
-endforeach;
-    // Reset the global post object so that the rest of the page works correctly.
-    wp_reset_postdata(); 
+        endwhile;
+        echo '</div>';
     echo '</div>';
-endif;
+    endif;
+
+    
+//     $premiumProducts = get_sub_field('products');
+    
+//     if( $premiumProducts ):
+//         echo '<div class="container-fluid">';
+//         echo '<div class="row pt-5">';
+// foreach( $premiumProducts as $post ): 
+// // Setup this post for WP functions (variable must be named $post).
+// setup_postdata($post);
+// echo '<a href="' . get_the_permalink() . '" class="col-lg-3 col-md-6 text-center col-premium-product" style="color:#66533b;">';
+// echo '<div class="position-relative">';
+
+// echo '<div class="position-absolute" style="width:75%;height:80%;top:8%;left:12.5%;background:#bfbfbf;mix-blend-mode:multiply;opacity:.42;pointer-events:none;"></div>';
+
+// echo '<div class="position-absolute" style="width:77%;height:81.25%;top:7.25%;left:11.5%;border:1px solid #737373;pointer-events:none;"></div>';
+
+// the_post_thumbnail('full',array('class'=>'w-auto','style'=>'height:650px;object-fit:contain;object-position:bottom;'));
+// echo '<span href="' . get_the_permalink() . '" class="bold h4 mt-4 d-block" style="">' . get_the_title() . '</span>';
+// // echo '<hr class="mt-2">';
+
+// echo '<div class="position-absolute d-flex align-items-center justify-content-center col-premium-product-overlay" style="
+// width: 85%;
+// height: 86%;
+// top: 5%;
+// left: 7.5%;
+// opacity:0;
+// background: rgba(0,0,0,.5);
+// transition:all .25s ease-in-out;
+// ">';
+// echo '<span class="bold text-white h2">SHOP NOW</span>';
+// echo '</div>';
+
+// echo '</div>';
+// echo '</a>';
+// endforeach;
+//     // Reset the global post object so that the rest of the page works correctly.
+//     wp_reset_postdata(); 
+//     echo '</div>';
+// endif;
 
 
     echo '</div>';

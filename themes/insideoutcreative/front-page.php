@@ -14,7 +14,7 @@ echo wp_get_attachment_image(197,'full','',['class'=>'w-100 h-100 position-absol
 
 // query the user media
 $fields = "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username";
-$token = "IGQVJVWC1VNEI4cDc4STJkUXJjemtrWmFhSWM4alZAaNVNnSU0yRzJoSWVkS3EwVFNoT09EYUg3eGcwRzZAVbl96R2dJQ3hZAcUFYVkNoaE9YR2pFNHFDNDZA1ZAVNJZA0NGcF9MOTl3M0p1NFIwVEdmYXVKNwZDZD";
+$token = "IGQVJXRV9vODZAxT0pGdVVYWE9hSVR4RVB3Y3NGcDVTWXJOR1Jua2JuVm0zNEtVcGFmRHRNOUhGTWlZAUGVfWmpVMU0zeFdjMlpGNG91OUZAhOHhFVFVhQ1owbE1zUWhUTXROMnl5bGZAmQ3NkQVpzUk9QWQZDZD";
 $limit = 9;
 
 $json_feed_url="https://graph.instagram.com/me/media?fields={$fields}&access_token={$token}&limit={$limit}";
