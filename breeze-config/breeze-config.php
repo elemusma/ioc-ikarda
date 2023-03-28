@@ -1,7 +1,7 @@
 <?php 
 defined( 'ABSPATH' ) || exit;
 return array (
-  'homepage' => 'https://wordpress-856494-3183806.cloudwaysapps.com',
+  'homepage' => 'http://localhost:8888/ikarda',
   'cache_options' => 
   array (
     'breeze-active' => '1',
@@ -105,9 +105,9 @@
   ),
   'exclude_url' => 
   array (
-    0 => '/cart/*',
-    1 => '/checkout/*',
-    2 => '/my-account/*',
+    0 => '/ikarda/cart/*',
+    1 => '/ikarda/checkout/*',
+    2 => '/ikarda/my-account/*',
   ),
   'wp-user-roles' => 
   array (

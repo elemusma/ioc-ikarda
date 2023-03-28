@@ -58,16 +58,16 @@ echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'h-auto pt-md-4 pt-
 echo '</a>';
 echo '</div>';
 
-echo '<div class="col-lg-3 col-md-4 col-5 p-0 text-right">';
-// echo '<a href="' . home_url() . '">';
 
 $logoSecondary = get_field('logo_secondary','options'); 
 if($logoSecondary){
+echo '<div class="col-lg-3 col-md-4 col-5 p-0 text-right">';
+// echo '<a href="' . home_url() . '">';
 echo wp_get_attachment_image($logoSecondary['id'],'full',"",['class'=>'h-auto','style'=>'transition:all .5s ease-in-out;max-width:100%;','id'=>'logo-secondary']); 
-}
-
 // echo '</a>';
 echo '</div>';
+}
+
 
 
 // echo '<div class="col-lg-4 col-6 desktop-hidden">';
