@@ -128,7 +128,7 @@ echo '<div class="container">';
 echo '<div class="row justify-content-end">';
 
 echo '<div class="col-lg-4 col-md-6">';
-echo '<h1 class="pt-3 mb-0" style="font-size:5rem;">' . get_the_title() . '</h1>';
+echo '<h1 class="pt-3 mb-0" style="font-size:4rem;">' . get_the_title() . '</h1>';
 // echo '<div class="divider ml-0" style="border-width:5px;"></div>';
 if ( have_posts() ) : while ( have_posts() ) : the_post();
 the_content();

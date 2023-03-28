@@ -34,6 +34,8 @@ wp_enqueue_style('btn', get_theme_file_uri('/css/elements/btn.css'));
 wp_enqueue_style('fonts', get_theme_file_uri('/css/elements/fonts.css'));
 wp_enqueue_style('proxima-nova', get_theme_file_uri('/proxima-nova/proxima-nova.css'));
 wp_enqueue_style('teko', '//use.typekit.net/ylz0hhv.css');
+wp_enqueue_style('oswaldo', '//fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+wp_enqueue_style('lulo', '//use.typekit.net/rzi4fnu.css');
 // wp_enqueue_style('blair-itc', get_theme_file_uri('/blair-itc/blair-itc.css'));
 // wp_enqueue_style('aspira', get_theme_file_uri('/aspira-font/aspira-font.css'));
 

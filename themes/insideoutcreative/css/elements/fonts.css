@@ -61,15 +61,15 @@ a.text-black:hover {
 
 html,
 body {
-  font-family: "proxima_novaregular";
+  font-family: 'Oswald', sans-serif;
 }
 
 .light {
-  font-family: "proxima_nova_altlight";
+  font-weight: 300;
 }
 
 .thin {
-  font-family: "proxima_novathin";
+  font-weight: 200;
 }
 
 blockquote {
@@ -80,14 +80,22 @@ h1,
 .h1,
 h2,
 .h2 {
-  font-family: teko, sans-serif;
+  font-family: "acier-bat-solid", sans-serif;
   font-weight: 700;
+  letter-spacing: .1em;
 }
 
 .bold,
 strong {
-  font-family: "proxima_novabold";
+  /* font-family: "proxima_novabold"; */
+  font-weight: 700;
 }
+
+/* 
+font-family: "acier-bat-solid", sans-serif;
+font-weight: 400;
+font-style: normal; 
+*/
 
 /* Teko Light
 font-family: teko, sans-serif;

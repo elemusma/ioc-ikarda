@@ -12,17 +12,23 @@ echo '<section class="pt-5 pb-5 position-relative">';
 
 echo wp_get_attachment_image(197,'full','',['class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;object-fit:cover;']);
 
+// print('hello');
+// print($GLOBALS['ig_feed']);
+// print('good bye');
+
 // query the user media
 $fields = "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username";
-$token = "IGQVJXRV9vODZAxT0pGdVVYWE9hSVR4RVB3Y3NGcDVTWXJOR1Jua2JuVm0zNEtVcGFmRHRNOUhGTWlZAUGVfWmpVMU0zeFdjMlpGNG91OUZAhOHhFVFVhQ1owbE1zUWhUTXROMnl5bGZAmQ3NkQVpzUk9QWQZDZD";
+// $token = "IGQVJXRV9vODZAxT0pGdVVYWE9hSVR4RVB3Y3NGcDVTWXJOR1Jua2JuVm0zNEtVcGFmRHRNOUhGTWlZAUGVfWmpVMU0zeFdjMlpGNG91OUZAhOHhFVFVhQ1owbE1zUWhUTXROMnl5bGZAmQ3NkQVpzUk9QWQZDZD";
 $limit = 9;
 
-$json_feed_url="https://graph.instagram.com/me/media?fields={$fields}&access_token={$token}&limit={$limit}";
+$json_feed_url="https://graph.instagram.com/me/media?fields={$fields}&access_token={$GLOBALS['ig_feed']}&limit={$limit}";
+
 $json_feed = @file_get_contents($json_feed_url);
 $contents = json_decode($json_feed, true, 512, JSON_BIGINT_AS_STRING);
 
 echo '<div class="container-fluid" style="border-top:4px solid black;border-bottom:4px solid black">';
 echo '<div class="instagram-carousel owl-carousel owl-theme">';
+
 foreach($contents['data'] as $post){
 
 $username = isset($post["username"]) ? $post["username"] : "";
