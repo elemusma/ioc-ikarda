@@ -248,7 +248,7 @@ if(have_rows('testimonials_group')): while(have_rows('testimonials_group')): the
         echo '</div>';
 
         if($imageSide == 'Left'){
-        echo '<div class="col-md-6 p-0 right">';
+        echo '<div class="col-md-6 p-0 pb-5 right">';
         } else {
             echo '<div class="col-md-6 p-0 left">';
         }
@@ -319,7 +319,7 @@ if(have_rows('testimonials_group')): while(have_rows('testimonials_group')): the
             $link_url = $link['url'];
             $link_title = $link['title'];
             $link_target = $link['target'] ? $link['target'] : '_self';
-            echo '<a class="btn-outline" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '</a>';
+            echo '<a class="btn-outline d-inline-block" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '</a>';
             
         endif;
         echo '</div>';
